@@ -1,3 +1,9 @@
+/* const challengeWeapons = [
+    "SMG",
+    "Light Machine Guns",
+    "Marksman Rifles",
+    "Shotgun !"
+] */
 /*
  * Welcome to your app's main JavaScript file!
  *
@@ -87,10 +93,10 @@ const attacker = [
     r6operators.zofia
 ];
 const challengeAttacker = [
-    "Play with controller",
     "SpawnKill !",
     "Attack from a window !",
     "Only knife",
+    "Shield",
     "No aim",
     "Rush !",
     "Forbidden to lean and run! !",
@@ -104,13 +110,12 @@ const challengeAttacker = [
     "SMG",
     "Light Machine Guns",
     "Marksman Rifles",
-    "Shield",
     "Shotgun !",
 ];
 const challengeDefender = [
-    "Play with controller",
     "Full run !",
     "Only knife",
+    "Shield",
     "No aim",
     "Forbidden to lean and run! !",
     "SpawnKill !",
@@ -126,7 +131,6 @@ const challengeDefender = [
     "SMG",
     "Light Machine Guns",
     "Marksman Rifles",
-    "Shield",
     "Shotgun !"
 ];
 
@@ -148,10 +152,10 @@ attack.innerHTML = `${html}`;
 //ADD random SVG Defender
 const btnDefender = document.getElementById('btnDefender');
 btnDefender.addEventListener("click", () => {
-const defenderOperators = defender[Math.floor(Math.random()*defender.length)];
+let defenderOperators = defender[Math.floor(Math.random()*defender.length)];
 const defenderSVG = defenderOperators.toSVG();
 const defend = document.getElementById('defenderSVG');
-defend.innerHTML = defenderSVG;
+defend.innerHTML = r6operators.recruit_blue.toSVG();
 //
 //Name of operator
 const idDefender = document.getElementById('idDefender');
@@ -161,11 +165,10 @@ idDefender.innerHTML = defenderOperators.id;
 const defenderChallenge = challengeDefender[Math.floor(Math.random()*challengeDefender.length)];
 const tacticalDefender = document.getElementById('tacticalDefender');
 tacticalDefender.innerHTML = defenderChallenge;
-if(defenderChallenge === "SMG" || defenderChallenge === "Light Machine Guns" || defenderChallenge === "Shield" || defenderChallenge === "Marksman Rifles" || defenderChallenge === "Shotgun !") {
+if(defenderChallenge === "SMG" || defenderChallenge === "Light Machine Guns" || defenderChallenge === "Marksman Rifles" || defenderChallenge === "Shotgun !") {
     defend.innerHTML = r6operators.recruit_blue.toSVG();
     idDefender.innerHTML = "Choose a character!";
 }
-
 //
 })
 /////////////
@@ -187,8 +190,8 @@ idAttacker.innerHTML = attackerOperators.id;
 const attackerChallenge = challengeAttacker[Math.floor(Math.random()*challengeAttacker.length)];
 const tacticalAttacker = document.getElementById('tacticalAttacker');
 tacticalAttacker.innerHTML = attackerChallenge;
-if(attackerChallenge === "SMG" || attackerChallenge === "Light Machine Guns" || attackerChallenge === "Shield" || attackerChallenge === "Marksman Rifles" || attackerChallenge === "Shotgun !") {
-    attack.innerHTML = r6operators.recruit_blue.toSVG();
+if(attackerChallenge === "SMG" || attackerChallenge === "Light Machine Guns" || attackerChallenge === "Marksman Rifles" || attackerChallenge === "Shotgun !") {
+    attack.innerHTML = `${html}`;
     idAttacker.innerHTML = "Choose a character!";
 }
 //

@@ -91,6 +91,7 @@ const challengeAttacker = [
     "SpawnKill !",
     "Attack from a window !",
     "Only knife",
+    "Shield",
     "No aim",
     "Rush !",
     "Forbidden to lean and run! !",

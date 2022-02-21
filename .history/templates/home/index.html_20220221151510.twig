@@ -45,7 +45,7 @@
 		<main>
 			<div class="py-5 text-center mt-5">
 				<h2>R6 Random</h2>
-				<h3 class="lead">Tu es Platine et tu souhaite faire partie des meilleurs? Alors deviens Bronze IV grace au selecteur de peronnage et de tactique intelligent ! ! !</h3>
+				<p class="lead">Tu es Platine et tu souhaite faire partie des meilleurs? Alors deviens Bronze IV grace au selecteur de peronnage et de tactique intelligent ! ! !</p>
 			</div>
 
 			<div class="row g-3">
@@ -86,4 +86,16 @@
 			</ul>
 		</footer>
 	</div>
+	<script src="anime.min.js">
+	anime({
+    targets: ['#attackerSVG'],
+    points: '64 128 8.574 96 8.574 32 64 0 119.426 32 119.426 96',
+    baseFrequency: 0,
+    scale: 1,
+    loop: true,
+    direction: 'alternate',
+    easing: 'easeInOutExpo'
+  });
+
+	</script>
 {% endblock %}

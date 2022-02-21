@@ -91,6 +91,7 @@ const challengeAttacker = [
     "SpawnKill !",
     "Attack from a window !",
     "Only knife",
+    "Shield",
     "No aim",
     "Rush !",
     "Forbidden to lean and run! !",
@@ -104,13 +105,13 @@ const challengeAttacker = [
     "SMG",
     "Light Machine Guns",
     "Marksman Rifles",
-    "Shield",
     "Shotgun !",
 ];
 const challengeDefender = [
     "Play with controller",
     "Full run !",
     "Only knife",
+    
     "No aim",
     "Forbidden to lean and run! !",
     "SpawnKill !",
@@ -126,7 +127,7 @@ const challengeDefender = [
     "SMG",
     "Light Machine Guns",
     "Marksman Rifles",
-    "Shield",
+    
     "Shotgun !"
 ];
 

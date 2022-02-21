@@ -91,6 +91,7 @@ const challengeAttacker = [
     "SpawnKill !",
     "Attack from a window !",
     "Only knife",
+    "Shield",
     "No aim",
     "Rush !",
     "Forbidden to lean and run! !",
@@ -104,13 +105,13 @@ const challengeAttacker = [
     "SMG",
     "Light Machine Guns",
     "Marksman Rifles",
-    "Shield",
     "Shotgun !",
 ];
 const challengeDefender = [
     "Play with controller",
     "Full run !",
     "Only knife",
+    "Shield",
     "No aim",
     "Forbidden to lean and run! !",
     "SpawnKill !",
@@ -126,7 +127,6 @@ const challengeDefender = [
     "SMG",
     "Light Machine Guns",
     "Marksman Rifles",
-    "Shield",
     "Shotgun !"
 ];
 
@@ -187,7 +187,7 @@ idAttacker.innerHTML = attackerOperators.id;
 const attackerChallenge = challengeAttacker[Math.floor(Math.random()*challengeAttacker.length)];
 const tacticalAttacker = document.getElementById('tacticalAttacker');
 tacticalAttacker.innerHTML = attackerChallenge;
-if(attackerChallenge === "SMG" || attackerChallenge === "Light Machine Guns" || attackerChallenge === "Shield" || attackerChallenge === "Marksman Rifles" || attackerChallenge === "Shotgun !") {
+if(attackerChallenge === "SMG" || attackerChallenge === "Light Machine Guns" || attackerChallenge === "Marksman Rifles" || attackerChallenge === "Shotgun !") {
     attack.innerHTML = r6operators.recruit_blue.toSVG();
     idAttacker.innerHTML = "Choose a character!";
 }
