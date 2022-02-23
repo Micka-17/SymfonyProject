@@ -88,7 +88,6 @@ const attacker = [
 ];
 const challengeAttacker = [
     "Play with controller",
-    "SpawnKill !",
     "Attack from a window !",
     "Only knife",
     "No aim",
@@ -99,7 +98,6 @@ const challengeAttacker = [
     "No accessories",
     "Suppressor !",
     "No gadgets !",
-    "Hide and seek !",
     "TK act like you didn't do it on purpose !!!!!!",
     "SMG",
     "Light Machine Guns",
@@ -121,7 +119,7 @@ const challengeDefender = [
     "No accessories",
     "Suppressor !",
     "No gadgets !",
-    "Hide and seek !",
+    "Hide and seek ! (You can take Mira...)",
     "TK act like you didn't do it on purpose !!!!!!",
     "SMG",
     "Light Machine Guns",
