@@ -11,7 +11,6 @@ import './styles/app.scss';
 // start the Stimulus application
 import './bootstrap';
 
-
 import Alert from 'bootstrap/js/dist/alert';
 
 // or, specify which plugins you need:
@@ -86,47 +85,20 @@ const attacker = [
     r6operators.zero, 
     r6operators.zofia
 ];
-const challengeAttacker = [
-    "Play with controller",
-    "Attack from a window !",
-    "Only knife",
-    "No aim",
-    "Rush !",
-    "Forbidden to lean and run! !",
-    "Secondary only !",
-    "No scop !",
-    "No accessories",
-    "Suppressor !",
-    "No gadgets !",
-    "TK act like you didn't do it on purpose !!!!!!",
-    "SMG",
-    "Light Machine Guns",
-    "Marksman Rifles",
-    "Shield",
-    "Shotgun !",
-];
-const challengeDefender = [
-    "Play with controller",
-    "Full run !",
-    "Only knife",
-    "No aim",
-    "Forbidden to lean and run! !",
-    "SpawnKill !",
-    "Reinforcement of walls is prohibited !",
-    "Open walls and windows !",
-    "Secondary only !",
-    "No scop !",
-    "No accessories",
-    "Suppressor !",
-    "No gadgets !",
-    "Hide and seek ! (You can take Mira...)",
-    "TK act like you didn't do it on purpose !!!!!!",
-    "SMG",
-    "Light Machine Guns",
-    "Marksman Rifles",
-    "Shield",
-    "Shotgun !"
-];
+
+let fetchAttack;
+async function fetchAttacker() {
+    fetchAttack = [];
+    await fetch('https://127.0.0.1:8000/challengeAttack').then(res => res.json()).then(data => fetchAttack = data);
+};
+fetchAttacker()
+
+let fetchDefense;
+async function fetchDefender() {
+    fetchDefense = [];
+await fetch('https://127.0.0.1:8000/challengeDefense').then(res => res.json()).then(data => fetchDefense = data);
+};
+fetchDefender()
 
 //H5 Random
 const idDefender = document.getElementById('idDefender');
@@ -156,7 +128,7 @@ const idDefender = document.getElementById('idDefender');
 idDefender.innerHTML = defenderOperators.id;
 //
 //Challenge
-const defenderChallenge = challengeDefender[Math.floor(Math.random()*challengeDefender.length)];
+const defenderChallenge = fetchDefense[Math.floor(Math.random()*fetchDefense.length)];
 const tacticalDefender = document.getElementById('tacticalDefender');
 tacticalDefender.innerHTML = defenderChallenge;
 if(defenderChallenge === "SMG" || defenderChallenge === "Light Machine Guns" || defenderChallenge === "Shield" || defenderChallenge === "Marksman Rifles" || defenderChallenge === "Shotgun !") {
@@ -182,7 +154,7 @@ const idAttacker = document.getElementById('idAttacker');
 idAttacker.innerHTML = attackerOperators.id;
 //
 //Challenge
-const attackerChallenge = challengeAttacker[Math.floor(Math.random()*challengeAttacker.length)];
+const attackerChallenge = fetchAttack[Math.floor(Math.random()*fetchAttack.length)];
 const tacticalAttacker = document.getElementById('tacticalAttacker');
 tacticalAttacker.innerHTML = attackerChallenge;
 if(attackerChallenge === "SMG" || attackerChallenge === "Light Machine Guns" || attackerChallenge === "Shield" || attackerChallenge === "Marksman Rifles" || attackerChallenge === "Shotgun !") {
@@ -192,3 +164,67 @@ if(attackerChallenge === "SMG" || attackerChallenge === "Light Machine Guns" || 
 //
 })
 ////////////
+// Dark-Mode
+const darkMode = document.getElementById('darkMode');
+darkMode.addEventListener("click", () => {
+const white = document.querySelectorAll('.tWhite, #idAttacker, #idDefender, #tacticalAttacker, #tacticalDefender');
+white.forEach(x => x.classList.toggle('text-white'));
+/* const nav = document.querySelector('nav');
+nav.classList.toggle('bg-secondary !important'); */
+const body = document.querySelector('body');
+body.classList.toggle('bg-dark');
+const btn = document.querySelector('button');
+btn.classList.toggle('btn-outline-dark');
+})
+//
+
+
+
+
+
+
+
+
+
+/* const challengeAttacker = [
+    "Play with controller",
+    "Attack from a window !",
+    "Only knife",
+    "No aim",
+    "Rush !",
+    "Forbidden to lean and run! !",
+    "Secondary only !",
+    "No scop !",
+    "No accessories",
+    "Suppressor !",
+    "No gadgets !",
+    "TK act like you didn't do it on purpose !!!!!!",
+    "SMG",
+    "Light Machine Guns",
+    "Marksman Rifles",
+    "Shield",
+    "Shotgun !"
+];
+
+const challengeDefender = [
+    "Play with controller",
+    "Full run !",
+    "Only knife",
+    "No aim",
+    "Forbidden to lean and run! !",
+    "SpawnKill !",
+    "Reinforcement of walls is prohibited !",
+    "Open walls and windows !",
+    "Secondary only !",
+    "No scop !",
+    "No accessories",
+    "Suppressor !",
+    "No gadgets !",
+    "Hide and seek ! (You can take Mira...)",
+    "TK act like you didn't do it on purpose !!!!!!",
+    "SMG",
+    "Light Machine Guns",
+    "Marksman Rifles",
+    "Shield",
+    "Shotgun !"
+]; */
