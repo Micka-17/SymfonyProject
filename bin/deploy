@@ -1,0 +1,7 @@
+#!/usr/bin/bash 
+
+
+#Pull dif
+git pull
+#install compser
+php ../composer.phar install
