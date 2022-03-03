@@ -1,7 +1,7 @@
 {
-  "public/build/app.css": "/public/build/app.c690a9d6.css",
-  "public/build/app.js": "/public/build/app.077d4e25.js",
-  "public/build/runtime.js": "/public/build/runtime.628766d5.js",
-  "public/build/824.e76afa86.js": "/public/build/824.e76afa86.js",
-  "public/build/images/noBrain.png": "/public/build/images/noBrain.7ec42cb7.png"
+  "build/app.css": "/build/app.c690a9d6.css",
+  "build/app.js": "/build/app.077d4e25.js",
+  "build/runtime.js": "/build/runtime.188fa053.js",
+  "build/824.e76afa86.js": "/build/824.e76afa86.js",
+  "build/images/noBrain.png": "/build/images/noBrain.7ec42cb7.png"
 }
