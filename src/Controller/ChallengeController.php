@@ -6,30 +6,36 @@ use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\JsonResponse;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
+use Symfony\Contracts\Translation\TranslatorInterface;
 
 class ChallengeController extends AbstractController
 {
+    protected $translator;
+    public function __construct(TranslatorInterface $translator ){
+        $this->translator = $translator;
+    }
+
     #[Route('/challengeAttack', name: 'challengeAttack')]
     public function challengeAttack(): Response
     {
         $challengeAttacker= [
-            "Play with controller",
-            "Attack from a window !",
-            "Only knife",
-            "No aim",
-            "Rush !",
-            "Forbidden to lean and run! !",
-            "Secondary only !",
-            "No scop !",
-            "No accessories",
-            "Suppressor !",
-            "No gadgets !",
-            "TK act like you didn't do it on purpose !!!!!!",
-            "SMG",
-            "Light Machine Guns",
-            "Marksman Rifles",
-            "Shield",
-            "Shotgun !"
+            $this->translator->trans("Joue mannette"),
+            $this->translator->trans("fenetre"),
+            $this->translator->trans("Couteau"),
+            $this->translator->trans("Sans visée"),
+            $this->translator->trans("fonce"),
+            $this->translator->trans("Joue un bot"),
+            $this->translator->trans("Arme secondaire"),
+            $this->translator->trans("Pas de viseur"),
+            $this->translator->trans("Pas de gadget"),
+            $this->translator->trans("Silencieux"),
+            $this->translator->trans("Pas d'accessoires"),
+            $this->translator->trans("Tue un alliée"),
+            $this->translator->trans("Mitraillettes"),
+            $this->translator->trans("Bateuse"),
+            $this->translator->trans("Dmr ou snipe"),
+            $this->translator->trans("Bouclier"),
+            $this->translator->trans("Fusil a pompe"),
         ];
         return new JsonResponse($challengeAttacker);
     }
@@ -38,26 +44,26 @@ class ChallengeController extends AbstractController
     public function challengeDefense(): Response
     {
         $challengeDefender= [
-            "Play with controller",
-            "Full run !",
-            "Only knife",
-            "No aim",
-            "Forbidden to lean and run! !",
-            "SpawnKill !",
-            "Reinforcement of walls is prohibited !",
-            "Open walls and windows !",
-            "Secondary only !",
-            "No scop !",
-            "No accessories",
-            "Suppressor !",
-            "No gadgets !",
-            "Hide and seek ! (You can take Mira...)",
-            "TK act like you didn't do it on purpose !!!!!!",
-            "SMG",
-            "Light Machine Guns",
-            "Marksman Rifles",
-            "Shield",
-            "Shotgun !"
+            $this->translator->trans("Joue mannette"),
+            $this->translator->trans("Cours"),
+            $this->translator->trans("Couteau"),
+            $this->translator->trans("Sans visée"),
+            $this->translator->trans("Joue un bot"),
+            $this->translator->trans("SpawnKill"),
+            $this->translator->trans("Pas de renfo"),
+            $this->translator->trans("Ouvrir tout"),
+            $this->translator->trans("Arme secondaire"),
+            $this->translator->trans("Pas de viseur"),
+            $this->translator->trans("Pas de gadget"),
+            $this->translator->trans("Silencieux"),
+            $this->translator->trans("Pas d'accessoires"),
+            $this->translator->trans("Cache cache"),
+            $this->translator->trans("Tue un alliée"),
+            $this->translator->trans("Mitraillettes"),
+            $this->translator->trans("Bateuse"),
+            $this->translator->trans("Dmr ou snipe"),
+            $this->translator->trans("Bouclier"),
+            $this->translator->trans("Fusil a pompe"),
         ];
         return new JsonResponse($challengeDefender);
     }

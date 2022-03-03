@@ -86,17 +86,23 @@ const attacker = [
     r6operators.zofia
 ];
 
+let url = window.location.href;
+
 let fetchAttack;
 async function fetchAttacker() {
     fetchAttack = [];
-    await fetch('https://127.0.0.1:8000/challengeAttack').then(res => res.json()).then(data => fetchAttack = data);
+    await fetch(`${url}challengeAttack`).then(res => res.json()).then(data => fetchAttack = data).catch(error => {
+        return Promise.reject()
+    });
 };
 fetchAttacker()
 
 let fetchDefense;
 async function fetchDefender() {
     fetchDefense = [];
-await fetch('https://127.0.0.1:8000/challengeDefense').then(res => res.json()).then(data => fetchDefense = data);
+    await fetch(`${url}challengeDefense`).then(res => res.json()).then(data => fetchDefense = data).catch(error => {
+        return Promise.reject()
+    });
 };
 fetchDefender()
 
