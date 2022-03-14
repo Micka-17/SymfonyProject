@@ -4,6 +4,16 @@
     left: 50%;
 }
 
+* {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    text-decoration: none;
+  }
+a {
+    all: unset;
+}
+
 @media screen and ( max-width: 768px) {
     .footer {
         position: relative;

@@ -5,8 +5,17 @@
 	<div class="container">
 		<nav class="navbar fixed-top navbar-expand-lg navbar-light bg-light">
 			<div class="container-fluid">
-				<button id="darkMode" type="button">Dark-Mode</button>
-					<button>Profile</button>
+				<button class="btn btn-info" id="darkMode" type="button">Dark-Mode</button>
+					<button class="btn btn-info">Profile</button>
+					<button class="btn btn-info">
+					<a href="{{ path('app_logout') }}">Logout</a>
+					</button>
+					<button class="btn btn-info">
+					<a href="{{ path('register') }}">Register</a>
+					</button>
+					<button class="btn btn-info">
+					<a href="{{ path('login') }}">Login</a>
+					</button>
 			</div>
 		</nav>
 		<main>
